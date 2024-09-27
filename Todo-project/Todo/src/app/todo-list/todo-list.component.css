@@ -9,6 +9,12 @@ hr {
     margin-bottom: 30px;
 }
 
-button{
-    margin-top: 40px;
+
+
+#submitButton {
+    margin-top: 20px;
+}
+
+#myCheckbox {
+    margin-left: 30px;
 }

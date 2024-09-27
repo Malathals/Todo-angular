@@ -2,8 +2,8 @@
   <h1>Todo List</h1>
   <hr />
 
-  <form>
-    <div class="form-group" #taskForm="ngForm">
+  <form #taskForm="ngForm">
+    <div class="form-group">
       <label for="Task">Task</label>
 
       <input
@@ -11,17 +11,40 @@
         class="form-control"
         id="Task"
         placeholder="Enter task"
+        ngModel
+        name="task"
         required
       />
 
       <small
-        *ngIf="taskForm.invalid && taskForm.dity"
+        *ngIf="taskForm.invalid && taskForm.dirty"
         id="errorMessage"
         class="form-text text-danger"
         >required field.</small
       >
     </div>
-
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <br />
+    <button [disabled]="taskForm.invalid" type="submit" class="btn btn-primary">
+      Submit
+    </button>
   </form>
+
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Task</th>
+          <th scope="col">Completed</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Do something</th>
+          <td><input id="myCheckbox" type="checkbox" /></td>
+          <td><button class="btn btn-danger btn-sm">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
