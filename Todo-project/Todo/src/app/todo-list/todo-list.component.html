@@ -1,1 +1,27 @@
-<p>todo-list works!</p>
+<div class="container">
+  <h1>Todo List</h1>
+  <hr />
+
+  <form>
+    <div class="form-group" #taskForm="ngForm">
+      <label for="Task">Task</label>
+
+      <input
+        type="Task"
+        class="form-control"
+        id="Task"
+        placeholder="Enter task"
+        required
+      />
+
+      <small
+        *ngIf="taskForm.invalid && taskForm.dity"
+        id="errorMessage"
+        class="form-text text-danger"
+        >required field.</small
+      >
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
